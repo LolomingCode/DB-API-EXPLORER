@@ -1,0 +1,308 @@
+
+*::-webkit-scrollbar {
+    width: 25px; 
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: url('/img/karinscrollbar.png')  ;
+    background-size: contain; 
+  
+}
+  *::-webkit-scrollbar-thumb {
+    background: url('/img/gokuthumb.png') no-repeat center center;
+    background-size: contain; 
+    
+  }
+  
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFF3E0;
+    color: #333;
+    background-image: url('https://via.placeholder.com/1500x1500.png?text=Dragon+Ball+Background');
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: rgba(255, 152, 0, 0.9) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand, h1, h2, h3 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+}
+.navbar-brand img{
+    width: 50px;
+}
+
+.banner {
+    background-image: url('/img/generic-banner_b11771ed-58aa-449d-844e-54a7ff995859.webp');
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    position: relative;
+    z-index: 2;
+    animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+
+#filter-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.character-card, .planet-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.character-card:hover, .planet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.character-card img, .planet-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover img, .planet-card:hover img {
+    transform: scale(1.05);
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+#pagination .page-btn {
+    background-color: #ff8c00;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#pagination button {
+    color: #ff6600;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ff6600;
+    transition: background-color 0.3s, color 0.3s;
+}
+#pagination button:hover {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.map-section,
+.developer-section,
+.contact-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.developer-section img {
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    animation: zoomInOut 5s ease infinite;
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.btn-primary {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ff9900;
+    border-color: #ff9900;
+}
+
+footer {
+    background-color: rgba(255, 152, 0, 0.9);
+    color: white;
+}
+
+footer a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFE0B2;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: #FFE0B2;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(255, 109, 0, 0.3);
+}
+.modal-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+#transformButton {
+    background-color: #FF6D00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+#transformButton:hover {
+    background-color: #FF9100;
+    transform: scale(1.05);
+}
+.transformation-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.ki-image {
+    width: 500px;
+    height: 1300px;
+    animation: pulse 1s infinite alternate;
+}
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+.moving-ki {
+    color: orangered;
+    font-weight: bold;
+    animation: kiAnimation 1s infinite alternate;
+}
+
+@keyframes kiAnimation {
+    0% {
+        transform: translateX(0);
+        text-shadow: 0 0 5px yellow, 0 0 10px yellow;
+    }
+    50% {
+        transform: translateX(2px);
+        text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+    }
+    100% {
+        transform: translateX(-2px);
+        text-shadow: 0 0 5px yellow, 0 0 10px yellow;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .results-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
